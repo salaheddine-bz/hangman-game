@@ -13,7 +13,7 @@ Array.from(keyboardLetters).forEach(letter => {
 let score = localStorage.getItem("score");
 
 // Get word from JSON File :
-let url = '/words2.json';
+let url = '/src/json/words2.json';
 
 fetch(url)
     .then(result => {
