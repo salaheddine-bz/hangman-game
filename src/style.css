@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+:root {
+    --main-color : #279AF1;
+    --white-color : #F7F7FF;
+    --black-color : #070600;
+}
+
+html {
+    font-size: 18px;
+}
+
+.container {
+    margin: auto;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+}
+
+body {
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+
+.info .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto 1fr;
+    text-transform: capitalize;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+.info header {
+    grid-area: 1/1/2/4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info header .logo {
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 25px;
+}
+
+
+.info .hangman-svg {
+    grid-area: 2/2/3/4;
+}
+.info .hangman-svg .element{
+    display: none;
+}
+
+.info .hangman-svg .figure-container.mistake7 .element:nth-child(1) {
+    display: block;
+}
+.info .hangman-svg .figure-container.mistake6 .element:nth-child(2) {
+    display: block;
+}
+.info .hangman-svg .figure-container.mistake5 .element:nth-child(3) {
+    display: block;
+}
+.info .hangman-svg .figure-container.mistake4 .element:nth-child(4) {
+    display: block;
+}
+.info .hangman-svg .figure-container.mistake3 .element:nth-child(5) {
+    display: block;
+}
+.info .hangman-svg .figure-container.mistake2 .element:nth-child(6) {
+    display: block;
+}
+.info .hangman-svg .figure-container.mistake1 .element:nth-child(7),
+.info .hangman-svg .figure-container.mistake1 .element:nth-child(8) {
+    display: block;
+}
+.info .hangman-svg .figure-container.mistake0 .element:nth-child(9),
+.info .hangman-svg .figure-container.mistake0 .element:nth-child(10) {
+    display: block;
+}
+
+.info .game-info {
+    grid-area: 2/1/3/2;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.info .game-info .lives {
+    display: flex;
+    flex-direction: column;
+}
+
+.info .game-info .lives span.loser {
+    color: red;
+}
+.info .game-info .lives span.winner {
+    color: green;
+}
+
+.info .game-info .category {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.info .game-info .category span{
+    color: var(--main-color);
+}
+
+.info .game-info > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+.info .game-info .container-score {
+    font-size: 30px;
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3px;
+}
+
+.info .game-info i {
+    color: var(--main-color);
+}
+
+.figure-container {
+    stroke: var(--black-color);
+    stroke-width: 3px;
+    stroke-linecap: round;
+    fill: transparent;
+    height: 100%;
+}
+
+
+
+.input-field .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.input-field .word {
+    display: flex;
+    width: 100%;
+    row-gap: 10px;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.input-field .word span {
+    flex-grow: 1;
+    max-width: 30px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid black;
+    text-transform: uppercase;
+}
+
+
+.input-field .word span.space-letter  {
+    border: none;
+}
+
+.input-field .alert {
+    width: 100%;
+    height: fit-content;
+    font-size: 14px;
+}
+
+.input-field .keyboard {
+    display: flex;
+    width: 100%;
+    max-width: 380px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.input-field .keyboard.win,
+.input-field .keyboard.loose {
+    pointer-events: none;
+}
+
+.input-field .keyboard span {
+    width: 35px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.input-field .keyboard span.clicked {
+    background-color: #eee;
+    pointer-events: none;
+}
+
+.input-field .keyboard span:hover {
+    scale: 1.05;
+}
+
+.pop-up {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #070600ec;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.pop-up div {
+    color: var(--white-color);
+}
+
+.pop-up button {
+    width: 150px;
+    height: 50px;
+    border: none;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+
+@media (max-width : 320px) {
+
+    html {
+        font-size: 14px;
+    }
+    .container {
+        max-width: 280px;
+        padding: 10px 0;
+    }
+
+    .input-field .word {
+        display: flex;
+        max-width: 280px;
+        width: 100%;
+        row-gap: 10px;
+        column-gap: 5px;
+        justify-content: center;
+    }
+    
+    .input-field .word span {
+        flex-grow: 1;
+        max-width: 20px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        border-bottom: 3px solid black;
+        text-transform: uppercase;
+    }
+
+    .input-field .keyboard {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+    
+    .input-field .keyboard span {
+        width: 25px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--main-color);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+    }
+}
