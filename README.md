@@ -1,6 +1,6 @@
 # Hangman Game
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c97f77da-7842-4816-ad5d-ce16b9b29d2a/deploy-status)](https://app.netlify.com/sites/english-hangman/deploys)
 ![alt text](/design/design%20img.png)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c97f77da-7842-4816-ad5d-ce16b9b29d2a/deploy-status)](https://app.netlify.com/sites/english-hangman/deploys)
 
 ## description :
 i build this project with pure html,css and javascript without any framwork.
